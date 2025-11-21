@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  auth-postgres:
+    image: postgres:16
+    container_name: auth-postgres
+    environment:
+      POSTGRES_DB: authdb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5433:5432"
+    volumes:
+      - auth_pg_data:/var/lib/postgresql/data
+    networks:
+      - auth-net
+
+volumes:
+  auth_pg_data:
+
+networks:
+  auth-net:
+    driver: bridge

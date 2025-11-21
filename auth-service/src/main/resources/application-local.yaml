@@ -6,9 +6,9 @@ spring:
     name: auth-service
 
   datasource:
-    username: postgres
-    password: root123
-    url: jdbc:postgresql://localhost:5432/postgres
+    username: authdb
+    password: password
+    url: jdbc:postgresql://localhost:5433/postgres
   jpa:
     hibernate:
       ddl-auto: create
