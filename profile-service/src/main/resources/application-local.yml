@@ -1,0 +1,21 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: profile-service
+
+  datasource:
+    username: user
+    password: password
+    url: jdbc:postgresql://localhost:5433/profiledb
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+jwt:
+  secret: "ThisIsSuperMegaSecretKeyForJwtTokenGeneration1234567890"
