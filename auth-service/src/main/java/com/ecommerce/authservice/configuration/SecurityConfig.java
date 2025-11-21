@@ -1,4 +1,4 @@
-package com.ecommerce.authservice.config;
+package com.ecommerce.authservice.configuration;
 
 import com.ecommerce.authservice.model.Role;
 import com.ecommerce.authservice.security.JwtAuthFilter;
@@ -22,6 +22,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
+                .securityMatcher("/auth/**")
                 .authorizeHttpRequests(auth -> auth.
                         requestMatchers("/auth/**").permitAll()
                         .requestMatchers("/admin/**").hasRole(Role.ADMIN.name())

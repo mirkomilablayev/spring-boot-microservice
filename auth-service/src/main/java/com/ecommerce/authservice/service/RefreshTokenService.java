@@ -15,7 +15,7 @@ import java.time.Instant;
 public class RefreshTokenService {
     private final RefreshTokenRepository refreshTokenRepository;
 
-    @Value("${jwt.refresh-expirations}")
+    @Value("${jwt.refresh-expiration}")
     private long refreshExpirationMs;
 
     @Transactional
